@@ -1,0 +1,90 @@
+<html>
+<head>
+<style>
+body {
+  background-color: pink;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  text-align: center;
+}
+
+#question {
+  font-size: 36px;
+  margin-top: 100px;
+}
+
+#yes {
+  position: absolute;
+  left: 40%;
+  top: 70%;
+  width: 100px;
+  height: 50px;
+  background-color: green;
+  border: none;
+  border-radius: 10px;
+  font-size: 24px;
+  color: white;
+}
+
+#no {
+  position: absolute;
+  left: 60%;
+  top: 70%;
+  width: 100px;
+  height: 50px;
+  background-color: red;
+  border: none;
+  border-radius: 10px;
+  font-size: 24px;
+  color: white;
+  transition: all 0.5s ease;
+}
+
+#cat {
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  width: 200px;
+  height: 200px;
+  display: none;
+  transform: translate(-50%, -50%);
+}
+
+</style>
+</head>
+<body onload="showDefaultCat()">
+<div id="question">Will you be my valentine?</div>
+<button id="yes" onclick="showHappyCat()">Yes</button>
+<button id="no" onmouseover="moveNo()">No</button>
+<img id="cat" src="C:\Users\Admin\Desktop\New folder\gifs">
+<script>
+function moveNo() {
+  var no = document.getElementById("no");
+  var x = Math.floor(Math.random() * 80) + 10;
+  var y = Math.floor(Math.random() * 80) + 10;
+  no.style.left = x + "%";
+  no.style.top = y + "%";
+  showCryingCat();
+}
+
+function showCryingCat() {
+  var cat = document.getElementById("cat");
+  cat.src = "crying.webp";
+  cat.style.display = "block";
+}
+
+function showHappyCat() {
+  var cat = document.getElementById("cat");
+  cat.src = "giphy.webp";
+  cat.style.display = "block";
+  window.alert("9848754826\nCall me");
+}
+
+function showDefaultCat() {
+  var cat = document.getElementById("cat");
+  cat.src = "wait.webp";
+  cat.style.display = "block";
+}
+</script>
+</body>
+</html>
